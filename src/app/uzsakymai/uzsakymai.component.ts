@@ -7,18 +7,20 @@ import { DialogModule } from 'primeng/dialog';
 import { InputTextModule } from 'primeng/inputtext';
 import { DatePickerModule } from 'primeng/datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-uzsakymai',
   imports: [CommonModule, OrderListModule, ButtonModule, DialogModule, ButtonModule, InputTextModule, DatePickerModule, ReactiveFormsModule, FormsModule],
   templateUrl: './uzsakymai.component.html',
-  styleUrls: ['./uzsakymai.component.scss']
+  styleUrls: ['./uzsakymai.component.scss'],
 })
 export class UzsakymaiComponent implements OnInit {
   bookingService = inject(BookingService);
+  messageService = inject(MessageService); 
   bookings: any[] = [];
   visible: boolean = false;
-  detailsVisible: boolean = false; // For View Details dialog
+  detailsVisible: boolean = false;
   rangeDates: Date[] | undefined;
   bookingBeingEdited: any = null;
   booking: any = {};
@@ -31,25 +33,16 @@ export class UzsakymaiComponent implements OnInit {
     this.bookingService.deleteBooking(booking.bookingId).subscribe(
       (response) => {
         this.bookings = this.bookings.filter(b => b.bookingId !== booking.bookingId);
-        alert('Sėkmingai ištrinta!');
+
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Sėkmingai ištrinta',
+          detail: 'Rezervacija buvo sėkmingai ištrinta!',
+          life: 5000
+        });
       },
-      (error) => {
-        alert('Klaida trinant užsakymą!');
-      }
+      (error) => {}
     );
-  }
-
-  viewDetails(booking: any): void {
-    this.booking = { ...booking };
-    this.detailsVisible = true;
-    console.log('Booking details:', this.booking);
-  }
-
-  openEditBookingModal(bookingBeingEdited: any): void {
-    this.visible = true;
-    this.resetBookingModel();
-    this.bookingBeingEdited = bookingBeingEdited;
-    console.log('Booking being edited:', bookingBeingEdited);
   }
 
   editBooking(): void {
@@ -76,15 +69,30 @@ export class UzsakymaiComponent implements OnInit {
 
     this.bookingService.editBooking(this.bookingBeingEdited.bookingId, bookingDTO).subscribe(
       (response) => {
-        alert('Sėkmingai atnaujinti duomenys!');
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Sėkmingai atnaujinta',
+          detail: 'Rezervacijos duomenys buvo sėkmingai atnaujinti!',
+          life: 5000
+        });
+
         this.visible = false;
         this.resetBookingModel();
         this.getBookings();
       },
-      (error) => {
-        alert('Klaida atnaujinant duomenis!');
-      }
+      (error) => {}
     );
+  }
+
+  viewDetails(booking: any): void {
+    this.booking = { ...booking };
+    this.detailsVisible = true;
+  }
+
+  openEditBookingModal(bookingBeingEdited: any): void {
+    this.visible = true;
+    this.resetBookingModel();
+    this.bookingBeingEdited = bookingBeingEdited;
   }
 
   showDialog(serviceId: number) {
@@ -107,7 +115,6 @@ export class UzsakymaiComponent implements OnInit {
     );
   }
 
-  // Close the view details dialog
   closeDetailsDialog(): void {
     this.detailsVisible = false;
   }

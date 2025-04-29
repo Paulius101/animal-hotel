@@ -7,17 +7,18 @@ import { InputTextModule } from 'primeng/inputtext';
 import { DatePickerModule } from 'primeng/datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BookingService } from '../services/booking.service';
-
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-kainynas',
   imports: [CommonModule, DialogModule, ButtonModule, InputTextModule, DatePickerModule, ReactiveFormsModule, FormsModule],
   templateUrl: './kainynas.component.html',
-  styleUrls: ['./kainynas.component.scss']
+  styleUrls: ['./kainynas.component.scss'],
 })
 export class KainynasComponent implements OnInit {
   pricingOptions: PricingOption[] = [];
   bookingService = inject(BookingService);
+  messageService = inject(MessageService); // Inject MessageService
   visible: boolean = false;
   rangeDates: Date[] | undefined;
   booking = {
@@ -63,12 +64,20 @@ export class KainynasComponent implements OnInit {
 
     this.bookingService.postBooking(bookingDTO).subscribe(
       (response) => {
-        console.log('Booking successful:', response);
-        alert('Sėkmingai rezervuota!');
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Rezervacija sėkminga',
+          detail: 'Jūsų rezervacija buvo sėkmingai atlikta!',
+          life: 5000 
+        });
+
         this.visible = false;
         this.resetBookingModel();
-      })
-
+      },
+      (error) => {
+        console.error('Booking failed:', error);
+      }
+    );
   }
 
   resetBookingModel() {
