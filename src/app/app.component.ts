@@ -3,10 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { NavigacijaComponent } from "./navigacija/navigacija.component";
 import { FooterComponent } from "./footer/footer.component";
 import { UserService } from './services/user.service';
+import { ToastModule } from 'primeng/toast';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavigacijaComponent, FooterComponent],
+  imports: [RouterOutlet, NavigacijaComponent, FooterComponent, ToastModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -21,4 +22,5 @@ export class AppComponent implements OnInit {
   setFakeUser() {
     this.userService.postUser().subscribe();
   }
+
 }

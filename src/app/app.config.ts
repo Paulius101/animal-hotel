@@ -4,18 +4,22 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeng/themes/aura';
 import { routes } from './routes/app.routes';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { errorInterceptor } from './interceptors/error-interceptor';
+import { MessageService } from 'primeng/api';
 
 export const appConfig: ApplicationConfig = {
-  providers: [
-    provideHttpClient(),
-    provideZoneChangeDetection({ eventCoalescing: true }),
-     provideRouter(routes),
-     provideAnimationsAsync(),
-        providePrimeNG({ 
+    providers: [
+        provideHttpClient(withInterceptors([errorInterceptor])),
+        provideZoneChangeDetection({ eventCoalescing: true }),
+        provideRouter(routes),
+        provideAnimationsAsync(),
+        MessageService,
+        providePrimeNG({
             theme: {
                 preset: Aura
             }
         })
     ]
 };
+
