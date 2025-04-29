@@ -1,59 +1,146 @@
-# AnimalHotel
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.7.
+# 🐶 Animal Hotel – Angular Frontend
 
-## Development server
+This is the frontend for the **PetService** application. Built with **Angular 19**, this app allows users to interact with the backend API for managing pet services, bookings, and user information.
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
+## 🚀 Features
+
+- 🌐 **Routing with Auth Guard**: Secured routes to main views like dashboard and bookings.
+- 💅 **PrimeNG UI Components**: Fast and stylish user interface using [PrimeNG](https://primeng.org/).
+- 🧭 **Lazy-loaded Components**: Improves performance and structure.
+- 📦 **Modern Build Tools**: Uses Angular CLI, Bootstrap 5, and more.
+
+---
+
+## 📁 Project Structure
+
+```
+animal-hotel/
+├── src/
+│   ├── app/
+│   │   ├── auth/               # Authentication guard
+│   │   ├── pradzia-hero/       # Home component (dashboard/start)
+│   │   ├── uzsakymai/          # Booking/orders component
+│   │   ├── path.constants.ts   # Route paths
+│   │   └── app.routes.ts       # App routing setup
+│   └── assets/
+├── angular.json
+├── package.json
+└── README.md
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## 🧩 Prerequisites
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Make sure you have the following installed:
 
-```bash
-ng generate component component-name
-```
+- [Node.js](https://nodejs.org/) (v18 or later recommended)
+- [Angular CLI](https://angular.io/cli)
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+Install Angular CLI globally if not installed:
 
 ```bash
-ng build
+npm install -g @angular/cli
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## 🔧 Installation & Running
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+1. **Clone the repo**:
+
+   ```bash
+   git clone https://github.com/Paulius101/animal-hotel.git
+   cd animal-hotel
+   ```
+
+2. **Install dependencies**:
+
+   ```bash
+   npm install
+   ```
+
+3. **Start the app**:
+
+   ```bash
+   ng serve
+   ```
+
+   Or using npm script:
+
+   ```bash
+   npm run start
+   ```
+
+4. **Visit in your browser**:
+
+   ```
+   http://localhost:4200
+   ```
+
+> ⚠️ Make sure the backend (Spring Boot PetService) is running on `http://localhost:8080`
+
+---
+
+## 🔒 Routing & Guards
+
+The application uses an `authGuard` to protect the following routes:
+
+- `/pradzia` – Dashboard/start page
+- `/uzsakymai` – View or manage bookings
+
+All unspecified routes redirect to `/pradzia`.
+
+---
+
+## 🧪 Running Tests
+
+Run unit tests using:
 
 ```bash
-ng test
+npm test
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 📦 Build for Production
 
 ```bash
-ng e2e
+ng build --configuration production
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## 📚 Useful Scripts
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+| Script         | Description                  |
+|----------------|------------------------------|
+| `npm start`    | Run development server       |
+| `npm run build`| Build the app                |
+| `npm test`     | Run unit tests               |
+
+---
+
+## 🎯 Technologies
+
+- Angular 19
+- PrimeNG
+- Bootstrap 5
+- TypeScript 5
+- RxJS
+- Karma + Jasmine for testing
+
+---
+
+## 🐾 Backend API
+
+This frontend is meant to work with the [PetService Spring Boot API](https://github.com/Paulius101/petservice).
+
+---
+
+## 📌 License
+
+This project is open-source and free to use.
