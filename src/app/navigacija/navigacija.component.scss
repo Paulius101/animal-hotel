@@ -1,0 +1,122 @@
+header {
+    background-color: #dacaba;
+    border-radius: 20px;
+
+    #logo {
+        span {
+            font-family: "Slackey";
+            color: #000958;
+            font-size: 35px;
+            line-height: 27px;
+            letter-spacing: 5px;
+        }
+    }
+
+    .nav {
+        min-height: 12vh;
+
+        .nav-links {
+            list-style: none;
+            gap: 50px;
+            transition: all 0.3s ease-in-out;
+            z-index: 2;
+
+            li {
+                a {
+                    text-decoration: none;
+                    font-family: "Poppins", sans-serif;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 14px;
+                    color: #5e6085;
+                    letter-spacing: 2px;
+                }
+
+                a:hover {
+                    color: #000958;
+                }
+            }
+        }
+
+        .burger {
+            display: none;
+            cursor: pointer;
+
+            div {
+                width: 25px;
+                height: 3px;
+                background-color: white;
+                margin: 5px;
+                border-radius: 6px;
+                transition: all 0.3s ease;
+            }
+        }
+    }
+}
+
+.nav-active {
+    transform: translateX(0%) !important;
+}
+
+@keyframes navLinksFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle {
+    .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .line2 {
+        opacity: 0;
+    }
+
+    .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+@media (max-width: 992px) {
+    .nav {
+        .nav-links {
+            position: absolute;
+            right: 0px;
+            top: 12vh;
+            height: 100vh;
+            background-color: #dacaba;
+            display: flex !important;
+            flex-direction: column;
+            align-items: center;
+            width: 50%;
+            padding-left: 0px;
+            justify-content: space-around !important;
+            border-radius: 35px;
+            // transition: transform 0.5s ease-in;
+            transform: translateX(100%);
+
+            li {
+                opacity: 0;
+            }
+        }
+
+        .burger {
+            display: block !important;
+        }
+    }
+}
+
+@media (max-width: 370px) {
+    #logo {
+        img {
+            display: none;
+        }
+    }
+}

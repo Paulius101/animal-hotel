@@ -1,0 +1,124 @@
+:host {
+    position: relative;
+    display: block;
+  }
+  
+  #myBtnTop {
+    position: absolute;
+    border: none;
+    color: white;
+    width: 46px;
+    height: 46px;
+    right: 28px;
+    top: -22px;
+    border-radius: 360px;
+    background: rgba(209, 135, 0, 0.678);
+  }
+  
+  :host {
+    background-color: #dacaba;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    border-radius: 20px;
+  }
+  
+  #address, #work-time {
+    span {
+      text-align: center;
+    }
+  }
+  
+  #title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 45px;
+  
+    #footer-contacts {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+  
+    span {
+      text-align: center;
+      font-family: "Slackey";
+      color: #000958;
+      font-size: 27px;
+      letter-spacing: 4px;
+    }
+  }
+  
+  .info-details {
+    color: #5e6085;
+    letter-spacing: 2px;
+  
+    span:first-of-type {
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+  }
+  
+  .social-media-icons {
+    display: flex;
+    gap: 20px;
+  
+    img:hover {
+      cursor: pointer;
+    }
+  }
+  
+  #menu {
+    span {
+      padding-left: 25px;
+    }
+  
+    .footer-menu {
+      ul {
+        text-align: center;
+        flex-direction: column;
+        gap: 5px;
+      }
+  
+      li {
+        list-style: none;
+  
+        a {
+          text-decoration: none;
+          font-family: "Poppins", sans-serif;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 14px;
+          color: #5e6085;
+          letter-spacing: 2px;
+  
+          &:hover {
+            color: #000958;
+          }
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .footer {
+      gap: 50px;
+  
+      ul {
+        padding-left: 0;
+      }
+  
+      #menu {
+        span {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+  

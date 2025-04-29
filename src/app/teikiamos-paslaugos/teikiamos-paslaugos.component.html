@@ -1,0 +1,21 @@
+<div class="container-fluid services-container">
+    <div class="container d-flex flex-column align-items-center justify-content-between services">
+        <h2 id="services-title">Teikiamos paslaugos</h2>
+        <div class="services-descriptions w-100">
+            <div *ngFor="let service of services"
+                 [id]="service.id">
+                <div class="mb-1 p-2 d-flex justify-content-start align-items-center gap-3">
+                    <img (click)="manageElement(service.iconId)"
+                         [id]="service.iconId"
+                         [src]="service.icon"
+                         alt="paveikslėlio perjungimo ikonėlė" />
+                    <h3>{{ service.title }}</h3>
+                </div>
+                <p [id]="service.pId"
+                   [ngClass]="service.classNameP">{{ service.description }}</p>
+                <div [id]="service.imgId"
+                     [ngClass]="service.classNameImg"></div>
+            </div>
+        </div>
+    </div>
+</div>

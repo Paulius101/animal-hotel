@@ -1,0 +1,56 @@
+<section class="container-fluid mt-4">
+    <div class="container">
+        <div class="row d-flex align-items-center">
+
+            <div *ngIf="showModal"
+                 id="myModal"
+                 class="modal"
+                 (click)="onOutsideClick($event)">
+                <div class="modal-content">
+                    <span class="close"
+                          (click)="closeModal()">&times;</span>
+                    <p>Malonu Jus matyti!</p>
+                </div>
+            </div>
+
+            <div class="hero-images col-md-6"></div>
+
+            <div class="hero-info col-md-6 mt-4 d-flex flex-column align-items-center">
+                <span class="mb-2">Geriausias pasirinkimas augintiniams</span>
+                <p>
+                    Išvykstate atostogauti arba į komandiruotę? O galbūt išvažiuojate
+                    savaitgaliui arba per šventes iš miesto? Palikite mums Jūsų
+                    pūkuotus draugus ir mes su visa meile prižiūrėsime juos,
+                    lepinsime, glostysime, mylėsime juos visą tą laiką, kol gyvūnai
+                    gyvens pas mus. Grąžinsime Jums gražius, išmaudytus ir sušukuotus
+                    atgal į Jūsų mylinčias rankas.
+                </p>
+
+                <div class="mini-icons d-flex mt-3">
+                    <div><img src="/assets/Rectangle-151.png"
+                             alt="mini icon 1" /></div>
+                    <div><img src="/assets/Rectangle-153.png"
+                             alt="mini icon 2" /></div>
+                    <div><img src="/assets/Rectangle-154-(1).png"
+                             alt="mini icon 3" /></div>
+                    <div><img src="/assets/Rectangle-155.png"
+                             alt="mini icon 4" /></div>
+                    <div><img src="/assets/Rectangle-156-(1).png"
+                             alt="mini icon 5" /></div>
+                    <div><img src="/assets/Rectangle-157.png"
+                             alt="mini icon 6" /></div>
+                </div>
+
+                <div class="mini-description mt-3">
+                    <p>
+                        Esame augintinių priežiūros centras, įvertintas 4,8 iš 5
+                        žvaigždutėmis!
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<app-teikiamos-paslaugos></app-teikiamos-paslaugos>
+<app-kainynas></app-kainynas>

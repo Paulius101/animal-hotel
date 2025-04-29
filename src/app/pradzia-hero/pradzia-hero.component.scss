@@ -1,0 +1,179 @@
+section {
+    .container {
+        .row {
+            justify-content: space-between;
+
+            .hero-images {
+                border-radius: 170px;
+                height: 522px;
+                background-image: url("../../assets/hero-dog.svg");
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                animation: heroBackgroundImages 10s ease-in-out infinite;
+            }
+
+            .hero-info {
+                span {
+                    display: flex;
+                    text-align: center;
+                    font-family: "Slackey";
+                    color: #000958;
+                    font-size: 48px;
+                    letter-spacing: 4px;
+                }
+
+                p {
+                    font-family: "Poppins", sans-serif;
+                    text-align: justify;
+                    margin-top: 20px;
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: #656689;
+                }
+
+                .mini-icons {
+                    div {
+                        border: 2px solid #ffffff;
+                        width: 95px;
+                        height: 95px;
+                        border-radius: 360px;
+                        margin-left: -10px;
+
+                        img {
+                            width: 95px;
+                            height: 95px;
+                            border-radius: 360px;
+                            transform: rotate(45deg);
+                        }
+                    }
+
+                    div:first-of-type {
+                        margin-left: 0px;
+                    }
+                }
+
+                .mini-description {
+                    p {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-image: linear-gradient(173deg, #05f1e5, #009f97);
+    display: flex;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+
+    p {
+        text-align: center;
+        font-family: "Slackey";
+        color: #000958;
+        font-size: 27px;
+        letter-spacing: 4px;
+    }
+}
+
+/* The Close Button */
+.close {
+    color: #000958;
+    text-align: end;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #0314ad;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes heroBackgroundImages {
+    0% {
+        background-image: url("/assets/hero-dog.svg");
+    }
+
+    100% {
+        background-image: url("/assets/hero-nurse.svg");
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-info {
+        span {
+            font-size: 24px !important;
+        }
+
+        p {
+            font-size: 12px !important;
+        }
+
+        .mini-icons {
+            div {
+                width: 65px !important;
+                height: 65px !important;
+
+                img {
+                    width: 65px !important;
+                    height: 65px !important;
+                }
+            }
+        }
+    }
+
+    .hero-images {
+        background-size: cover !important;
+    }
+}
+
+@media (max-width: 384px) {
+    .mini-icons {
+        div:nth-of-type(3) {
+            display: none;
+
+            img:nth(3) {
+                display: none;
+            }
+        }
+
+        div:nth-of-type(4) {
+            display: none;
+
+            img:nth(4) {
+                display: none;
+            }
+        }
+    }
+}

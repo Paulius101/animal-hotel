@@ -1,0 +1,68 @@
+<!-- footer.component.html -->
+<footer class="container-fluid d-flex flex-column flex-wrap">
+
+    <button (click)="topFunction()" id="myBtnTop" title="Go to top">
+      <svg xmlns="http://www.w3.org/2000/svg"
+           width="24"
+           height="24"
+           fill="currentColor"
+           class="bi bi-arrow-up"
+           viewBox="0 0 16 16">
+        <path d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z" />
+      </svg>
+    </button>
+  
+    <div class="container">
+      <div class="footer row d-flex align-items-start justify-content-between my-4">
+        
+        <!-- Logo / Title / Social Links -->
+        <div id="title" class="col-md-3">
+          <span>Tiukelis</span>
+          <div class="social-media-icons">
+            <!-- <a href="https://www.linkedin.com/" target="_blank" rel="noopener">
+              <img src="assets/images/linkedin.png" alt="LinkedIn" />
+            </a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener">
+              <img src="assets/images/facebook.png" alt="Facebook" />
+            </a> -->
+          </div>
+          <div id="footer-contacts">
+            <a style="word-break: break-word;" href="mailto:gyvunuviesbutis@tiukelis.lt">
+              cia&#64;tiukelis.lt
+            </a>
+            <a href="tel:+37061234567">+37061234567</a>
+          </div>
+        </div>
+  
+        <!-- Address -->
+        <div id="address" class="info-details col-md-3 d-flex flex-column align-items-center">
+          <span>ADRESAS</span>
+          <span>Ozo gatvė 18, Vilnius</span>
+        </div>
+  
+        <!-- Work Time -->
+        <div id="work-time" class="info-details col-md-3 d-flex flex-column align-items-center">
+          <span>DARBO LAIKAS</span>
+          <span>I-VII: 9:00 – 19:00</span>
+        </div>
+  
+        <!-- Menu -->
+        <div id="menu" class="info-details col-md-3 d-flex flex-column align-items-center">
+          <span>MENIU</span>
+          <div class="footer-menu d-flex justify-content-between align-items-center">
+            <ul class="d-flex justify-content-between align-items-center mb-0 nav-links">
+              <li><a routerLink="/" (click)="setActiveLink('apieId')">Pradžia</a></li>
+              <li><a routerLink="/viesbutis" (click)="setActiveLink('viesbutisId')">Viešbutis</a></li>
+              <li><a routerLink="/spa" (click)="setActiveLink('spaId')">SPA</a></li>
+              <li><a routerLink="/dresura" (click)="setActiveLink('dresuraId')">Dresūra</a></li>
+              <li><a routerLink="/specialistai" (click)="setActiveLink('specialistaiId')">Komanda</a></li>
+              <li><a routerLink="/kontaktai" (click)="setActiveLink('kontaktaiId')">Kontaktai</a></li>
+            </ul>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  
+  </footer>
+  

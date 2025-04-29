@@ -1,0 +1,86 @@
+.services-container {
+    margin-top: 50px;
+
+    .services {
+        gap: 23px;
+
+        h2#services-title {
+            font-family: "Slackey";
+            font-size: 48px;
+            text-align: center;
+            letter-spacing: 4px;
+            color: #000958;
+        }
+
+        .services-descriptions {
+            img {
+                margin-bottom: 8px;
+            }
+
+            #first,
+            #second,
+            #third:hover {
+                cursor: pointer;
+            }
+
+            h3 {
+                font-family: "Poppins", sans-serif;
+                color: #000958;
+            }
+
+            p {
+                font-family: "Poppins", sans-serif;
+                text-align: justify;
+                font-size: 16px;
+                font-weight: 500;
+                color: #656689;
+                margin-left: 35px;
+            }
+
+            div#firstImg {
+                height: 450px;
+                margin-left: 35px;
+                border-radius: 35px;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                margin-bottom: 20px;
+                background-image: url("../../assets/gyvunu-viesbucio-kambarys.jpg");
+            }
+
+            div#secondImg {
+                height: 450px;
+                margin-left: 35px;
+                border-radius: 35px;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                margin-bottom: 20px;
+                background-image: url("../../assets/suns-photo.webp");
+            }
+
+            div#thirdImg {
+                height: 450px;
+                margin-left: 35px;
+                border-radius: 35px;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                margin-bottom: 20px;
+                background-image: url("../../assets/dresura.webp");
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .services-container {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 420px) {
+    h2#services-title {
+        font-size: 28px !important;
+    }
+}

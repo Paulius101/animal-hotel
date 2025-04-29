@@ -1,0 +1,52 @@
+<header class="container-fluid">
+    <nav class="container d-flex justify-content-between align-items-center">
+        <div id="logo"
+             class="d-flex justify-content-center align-items-center">
+            <span>Tiukelis</span>
+            <img src="/assets/Union.svg"
+                 alt="pedute" />
+        </div>
+
+        <div class="nav d-flex justify-content-between align-items-center">
+            <ul class="d-flex justify-content-between align-items-center mb-0 nav-links">
+                <li>
+                    <a id="apieId"
+                       (click)="setActiveLink('apieId')"
+                       routerLink="/">Pradžia</a>
+                </li>
+                <li>
+                    <a id="uzsakymaiId"
+                       (click)="setActiveLink('uzsakymaiId')"
+                       routerLink="/uzsakymai">Užsakymai</a>
+                </li>
+                <!-- <li>
+                    <a id="spaId"
+                       (click)="setActiveLink('spaId')"
+                       routerLink="/spa">SPA</a>
+                </li>
+                <li>
+                    <a id="dresuraId"
+                       (click)="setActiveLink('dresuraId')"
+                       routerLink="/dresura">Dresūra</a>
+                </li>
+                <li>
+                    <a id="specialistaiId"
+                       (click)="setActiveLink('specialistaiId')"
+                       routerLink="/specialistai">Komanda</a>
+                </li>
+                <li>
+                    <a id="kontaktaiId"
+                       (click)="setActiveLink('kontaktaiId')"
+                       routerLink="/kontaktai">Kontaktai</a>
+                </li> -->
+            </ul>
+
+            <div (click)="navSlide()"
+                 class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </nav>
+</header>
